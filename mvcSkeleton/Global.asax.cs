@@ -55,15 +55,7 @@ namespace mvcSkeleton
 
         private ISessionFactory CreateSessionFactory(Configuration config)
         {
-            try
-            {
                 return config.BuildSessionFactory();
-
-            }
-            catch (SqlException e)
-            {
-                throw new Exception("Cannot open database.  You may need to create the db before nhibernate can build the schema", e);
-            }
         }
 
         private void BuildSchema(Configuration config)
